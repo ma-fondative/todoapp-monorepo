@@ -1,7 +1,7 @@
 {
-  "name": "web",
+  "name": "@todoapp/web",
+  "version": "1.0.0",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,20 +10,22 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@todoapp/ui": "*",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-router": "^7.7.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.25.0",
+    "@tailwindcss/vite": "^4.1.10",
+    "@todoapp/eslint-config": "*",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "@vitejs/plugin-react-swc": "^3.9.0",
     "eslint": "^9.25.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^16.0.0",
+    "shadcn": "^2.9.2",
+    "tailwindcss": "^4.1.10",
     "typescript": "~5.8.3",
-    "typescript-eslint": "^8.30.1",
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }

@@ -4,5 +4,13 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "format": "prettier --write \"**/*.{ts,tsx}\"",
+    "lint": "yarn workspace @todoapp/ui lint && yarn workspace @todoapp/web lint",
+    "dev": "yarn workspace @todoapp/web dev"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
 }

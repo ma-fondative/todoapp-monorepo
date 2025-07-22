@@ -1,0 +1,10 @@
+{
+  "extends": "@todoapp/typescript-config/react-library.json",
+  "compilerOptions": {
+    "paths": {
+      "@todoapp/ui/*": ["./src/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
