@@ -2,6 +2,7 @@
   "name": "@todoapp/ui",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "exports": {
     "./styles/globals.css": "./src/styles/globals.css",
     "./components/*": "./src/components/*.tsx",

@@ -4,8 +4,12 @@
   "private": true,
   "type": "module",
   "exports": {
+    "./base": "./base.js",
     "./react": "./react.js",
     "./vite": "./vite.js"
+  },
+  "scripts": {
+    "lint": "exit 0"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.0",

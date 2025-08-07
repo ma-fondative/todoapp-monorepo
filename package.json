@@ -7,8 +7,13 @@
   ],
   "scripts": {
     "format": "prettier --write \"**/*.{ts,tsx}\"",
-    "lint": "yarn workspace @todoapp/ui lint && yarn workspace @todoapp/web lint",
-    "dev": "yarn workspace @todoapp/web dev"
+    "lint": "yarn workspaces run lint",
+    "api:dev": "yarn workspace @todoapp/api dev",
+    "api:build": "yarn workspace @todoapp/api build",
+    "web:dev": "yarn workspace @todoapp/web dev",
+    "dev": "yarn api:dev && yarn web:dev",
+    "db:generate": "yarn workspace @todoapp/api tsx ../../node_modules/drizzle-kit/bin.cjs generate",
+    "db:migrate": "yarn workspace @todoapp/api tsx ../../node_modules/drizzle-kit/bin.cjs migrate"
   },
   "devDependencies": {
     "prettier": "^3.6.2"

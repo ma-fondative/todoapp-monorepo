@@ -1,0 +1,14 @@
+{
+  "extends": "@todoapp/typescript-config/base.json",
+  "compilerOptions": {
+    "target": "es2023",
+    "lib": ["ESNext"],
+    "module": "nodenext",
+    "outDir": "./dist",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src", "drizzle.config.ts"],
+  "exclude": ["node_modules"]
+}
