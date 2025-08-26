@@ -1,11 +1,14 @@
 import { createBrowserRouter } from 'react-router';
 import { NotFound } from './routes/not-found';
-import { AppLayout } from './layouts/app-layout';
+import { AppLayout, loader as appLoader } from './layouts/app-layout';
 import { AuthLayout } from './layouts/auth-layout';
+import { ErrorBoundary } from './routes/error-boundary';
 
 export const router = createBrowserRouter([
   {
     Component: AppLayout,
+    ErrorBoundary: ErrorBoundary,
+    loader: appLoader,
     children: [
       {
         index: true,
@@ -15,6 +18,7 @@ export const router = createBrowserRouter([
   },
   {
     Component: AuthLayout,
+    ErrorBoundary: ErrorBoundary,
     children: [
       {
         path: '/login',
@@ -23,6 +27,10 @@ export const router = createBrowserRouter([
       {
         path: '/register',
         lazy: async () => import('./routes/auth/register')
+      },
+      {
+        path: '/forgot-password',
+        lazy: async () => import('./routes/auth/forgot-password')
       }
     ]
   },

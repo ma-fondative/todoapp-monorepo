@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "exports": {
+    "./types/*": "./src/types/*.ts",
+    "./schemas/request/*": "./src/schemas/*.ts"
+  },
   "scripts": {
     "dev": "tsx watch -r dotenv/config src/main.ts",
     "build": "rm -rf ./dist && tsc && tsc-alias",

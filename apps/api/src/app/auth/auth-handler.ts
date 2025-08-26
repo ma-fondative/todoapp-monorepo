@@ -60,7 +60,7 @@ function createVerifyJwt(app: FastifyInstance) {
     try {
       payload = verifySync(token);
     } catch (err) {
-      if (err instanceof TokenError && err.code === TokenError.codes.expired) {
+      if (err instanceof TokenError/* && err.code === TokenError.codes.expired*/) {
         throw new AppError('token_expired', {}, err);
       }
       throw err;

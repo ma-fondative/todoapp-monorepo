@@ -11,11 +11,15 @@
     "api:dev": "yarn workspace @todoapp/api dev",
     "api:build": "yarn workspace @todoapp/api build",
     "web:dev": "yarn workspace @todoapp/web dev",
-    "dev": "yarn api:dev && yarn web:dev",
+    "dev": "concurrently \"yarn api:dev\" \"yarn web:dev\"",
+    "ui:add": "yarn workspace @todoapp/ui shadcn add",
+    "db:up": "docker compose -f ~/Workspace/docker/db/docker-compose.yml up -d",
+    "db:down": "docker compose -f ~/Workspace/docker/db/docker-compose.yml down",
     "db:generate": "yarn workspace @todoapp/api tsx ../../node_modules/drizzle-kit/bin.cjs generate",
     "db:migrate": "yarn workspace @todoapp/api tsx ../../node_modules/drizzle-kit/bin.cjs migrate"
   },
   "devDependencies": {
+    "concurrently": "^9.2.0",
     "prettier": "^3.6.2"
   }
 }
