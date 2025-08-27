@@ -1,14 +1,17 @@
 import { createBrowserRouter } from 'react-router';
 import { NotFound } from './routes/not-found';
-import { AppLayout, loader as appLoader } from './layouts/app-layout';
-import { AuthLayout } from './layouts/auth-layout';
+import { Layout as AppLayout } from './routes/layout';
+import { loader as authGuardLoader } from './routes/auth-guard';
+import { Layout as AuthLayout } from './routes/auth/layout';
 import { ErrorBoundary } from './routes/error-boundary';
+import { Loading } from './routes/loading';
 
 export const router = createBrowserRouter([
   {
     Component: AppLayout,
     ErrorBoundary: ErrorBoundary,
-    loader: appLoader,
+    HydrateFallback: Loading,
+    loader: authGuardLoader,
     children: [
       {
         index: true,
@@ -19,6 +22,7 @@ export const router = createBrowserRouter([
   {
     Component: AuthLayout,
     ErrorBoundary: ErrorBoundary,
+    HydrateFallback: Loading,
     children: [
       {
         path: '/login',

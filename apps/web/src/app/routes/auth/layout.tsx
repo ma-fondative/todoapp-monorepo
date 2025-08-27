@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router';
 import Logo from '@/assets/logo.svg?react';
 
-export function AuthLayout() {
+export function Layout() {
   return (
     <div className="bg-muted flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
       <a href="#" className="flex items-center gap-2 self-center font-medium">

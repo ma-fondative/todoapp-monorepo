@@ -1,11 +1,9 @@
+import React from 'react';
 import {
-  Outlet,
   redirect,
-  type LoaderFunctionArgs,
-  useLoaderData
+  type LoaderFunctionArgs
 } from 'react-router';
 import { me } from '@/app/api/auth';
-import { type UserResponse } from '@todoapp/api/types/users';
 import { AUTH_TOKEN_KEY } from '@/constants/auth';
 
 export async function loader({ request }: LoaderFunctionArgs) {
@@ -19,20 +17,12 @@ export async function loader({ request }: LoaderFunctionArgs) {
 
   try {
     return await me();
-  } catch (e) {
+  } catch {
     localStorage.removeItem(AUTH_TOKEN_KEY);
-    throw e;
+    return redirect('/login?' + params.toString());
   }
 }
 
-export function AppLayout() {
-  const user = useLoaderData() as UserResponse;
-
-  return (
-    <>
-      <h1>App Layout</h1>
-      <p>Welcome, {user?.email}!</p>
-      <Outlet />
-    </>
-  );
+export function AuthGuard({ children }: { children: React.ReactNode }) {
+  return <>{children}</>;
 }

@@ -26,7 +26,9 @@ apiClient.interceptors.response.use(
   (error) => {
     const message = error.response?.data?.message || error.message;
     toast.error(message);
-
+    if (error.response?.data?.code === 'token_expired') {
+      // ToDo: refresh token
+    }
     return Promise.reject(new Error(message));
   }
 );
