@@ -15,7 +15,11 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        lazy: async () => import('./routes/home')
+        lazy: async () => import('./routes/root')
+      },
+      {
+        path: '/users',
+        lazy: async () => import('./routes/users/users-list')
       }
     ]
   },

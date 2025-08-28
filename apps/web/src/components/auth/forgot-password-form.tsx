@@ -29,12 +29,7 @@ export function ForgotPasswordForm({
             <div className="flex flex-col gap-6">
               <div className="grid gap-3">
                 <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="m@example.com"
-                  required
-                />
+                <Input id="email" type="email" required />
               </div>
               <div className="flex flex-col gap-3">
                 <Button type="submit" className="w-full">

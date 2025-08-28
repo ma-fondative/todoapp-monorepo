@@ -11,7 +11,7 @@ export function Layout() {
       <div className="flex min-h-svh flex-col">
         <Header user={user} />
         <main className="flex flex-1 p-2 md:p-4">
-          <div className="flex-1 bg-muted">
+          <div className="flex-1">
             <Outlet />
           </div>
         </main>

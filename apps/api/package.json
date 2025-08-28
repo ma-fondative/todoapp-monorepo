@@ -5,7 +5,7 @@
   "type": "module",
   "exports": {
     "./types/*": "./src/types/*.ts",
-    "./schemas/request/*": "./src/schemas/*.ts"
+    "./schemas/request/*": "./src/schemas/request/*.ts"
   },
   "scripts": {
     "dev": "tsx watch -r dotenv/config src/main.ts",

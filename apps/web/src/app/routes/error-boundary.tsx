@@ -1,4 +1,4 @@
-import { isRouteErrorResponse, useRouteError } from 'react-router';
+import { isRouteErrorResponse, Link, useRouteError } from 'react-router';
 import Logo from '@/assets/logo.svg?react'; // Importation du composant Logo
 import {
   Card,
@@ -14,9 +14,9 @@ export function ErrorBoundary() {
   return (
     <div className="flex min-h-svh flex-col">
       <nav className="bg-muted flex items-center justify-between border-b px-6 py-2">
-        <a href="/" className="flex items-center gap-2 font-medium">
+        <Link to="/" className="flex items-center gap-2 font-medium">
           <Logo className="h-9" />
-        </a>
+        </Link>
       </nav>
       <main className="flex-1 p-2 md:p-4 flex justify-center">
         <Card className="w-full">
