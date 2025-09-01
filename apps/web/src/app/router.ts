@@ -12,6 +12,7 @@ export const router = createBrowserRouter([
     ErrorBoundary: ErrorBoundary,
     HydrateFallback: Loading,
     loader: authGuardLoader,
+    shouldRevalidate: () => false,
     children: [
       {
         index: true,
